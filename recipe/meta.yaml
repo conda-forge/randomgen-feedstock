@@ -1,17 +1,17 @@
 {% set name = "randomgen" %}
-{% set version = "1.18.1" %}
+{% set version = "1.19.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 8e7811be98ffedea36789188612e3f70ffca7cdeab854bfdfea167e272fa5ff2
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 34e532ac08ac065303b64824e2411570f26832626d38b5402b87b4e989332892
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -37,11 +37,11 @@ test:
     - python -m pytest -rs --pyargs randomgen.tests
 
 about:
-  home: "https://github.com/bashtage/randomgen"
+  home: https://github.com/bashtage/randomgen
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.md
-  summary: "Random generator supporting multiple PRNGs"
+  summary: Random generator supporting multiple PRNGs
 
 extra:
   recipe-maintainers:
