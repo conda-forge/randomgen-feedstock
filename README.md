@@ -5,7 +5,7 @@ Home: https://github.com/bashtage/randomgen
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Random generator supporting multiple PRNGs
 
