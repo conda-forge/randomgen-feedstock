@@ -1,17 +1,17 @@
 {% set name = "randomgen" %}
-{% set version = "1.19.2" %}
+{% set version = "1.19.3" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 8c69d5c5657d661ebc7e81f345b8a30e9ff3f939ecf0c566ad6512e36f0ccdae
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e0f8596ad6f595900ac0cc8463c6366f0a763b5b8f8e81cdd38fd7fb3d717ddc
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -35,11 +35,11 @@ test:
     - python -c "import randomgen;randomgen.test(['--skip-slow'])"
 
 about:
-  home: "https://github.com/bashtage/randomgen"
+  home: https://github.com/bashtage/randomgen
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.md
-  summary: 'Numpy-compatible bit generators and add some random variate distributions missing from NumPy.'
+  summary: Numpy-compatible bit generators and add some random variate distributions missing from NumPy.
   description: |
     randomgen supplies many bit generators that can be used with numpy.random.Generator. It
     also supports additional variants of the bit generators included in NumPy.
