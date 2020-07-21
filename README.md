@@ -5,10 +5,12 @@ Home: https://github.com/bashtage/randomgen
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
-Summary: Random generator supporting multiple PRNGs
+Summary: Numpy-compatible bit generators and add some random variate distributions missing from NumPy.
 
+randomgen supplies many bit generators that can be used with numpy.random.Generator. It
+also supports additional variants of the bit generators included in NumPy.
 
 
 Current build status
@@ -197,5 +199,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bashtage](https://github.com/bashtage/)
 * [@duncanmmacleod](https://github.com/duncanmmacleod/)
 
