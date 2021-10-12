@@ -31,12 +31,16 @@ requirements:
     - python
 
 test:
-  imports:
-    - randomgen
   requires:
+    - pip
     - pytest
+    - pytest-xdist
+    - scipy
   commands:
-    - python -c "import randomgen;randomgen.test(['--skip-slow'])"
+    # check requirements
+    - python -m pip check
+    # run test suite
+    - python -c "import randomgen; randomgen.test(['--skip-slow', '--numprocesses', '{{ CPU_COUNT }}'])"
 
 about:
   home: https://github.com/bashtage/randomgen
