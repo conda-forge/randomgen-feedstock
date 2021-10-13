@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "1.20.3" %}
+{% set version = "1.21.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 94ed589496ff3192de62f43c95ce9f5b0c1da0685a27d45db10f700f465593d1
+  sha256: 66d80306123ed54f3f68ac3bd0c02909a4adcadb878b3aaf9e3bb8142d8dbf2f
 
 build:
   number: 0
