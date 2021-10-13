@@ -10,11 +10,15 @@ source:
   sha256: 66d80306123ed54f3f68ac3bd0c02909a4adcadb878b3aaf9e3bb8142d8dbf2f
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
     - cython >=0.29
@@ -27,12 +31,16 @@ requirements:
     - python
 
 test:
-  imports:
-    - randomgen
   requires:
+    - pip
     - pytest
+    - pytest-xdist
+    - scipy
   commands:
-    - python -c "import randomgen;randomgen.test(['--skip-slow'])"
+    # check requirements
+    - python -m pip check
+    # run test suite
+    - python -c "import randomgen; randomgen.test(['--skip-slow', '--numprocesses', '{{ CPU_COUNT }}'])"
 
 about:
   home: https://github.com/bashtage/randomgen
