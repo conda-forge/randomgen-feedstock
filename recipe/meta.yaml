@@ -20,14 +20,14 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - setuptools-scm
-    - packaging
   host:
     - cython >=0.29
     - numpy
     - pip
     - python
     - setuptools
+    - setuptools-scm
+    - packaging
   run:
     - {{ pin_compatible('numpy') }}
     - python
