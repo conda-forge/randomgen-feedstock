@@ -21,6 +21,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - setuptools-scm
+    - packaging
   host:
     - cython >=0.29
     - numpy
