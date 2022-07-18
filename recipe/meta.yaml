@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "1.21.2" %}
+{% set version = "1.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 66d80306123ed54f3f68ac3bd0c02909a4adcadb878b3aaf9e3bb8142d8dbf2f
+  sha256: 093e9915366eb58b3e3a2dd4d16f455fcaf84960be80ce4f39bb7d62fd908734
 
 build:
-  number: 3
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -26,6 +26,8 @@ requirements:
     - pip
     - python
     - setuptools
+    - setuptools-scm
+    - packaging
   run:
     - {{ pin_compatible('numpy') }}
     - python
