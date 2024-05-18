@@ -31,7 +31,6 @@ requirements:
     - setuptools
     - setuptools-scm
   run:
-    - {{ pin_compatible('numpy') }}
     - python
 
 test:
