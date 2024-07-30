@@ -10,24 +10,26 @@ source:
   sha256: 1029fe65120631efbb42f9a78ee1a0fe6c17719ca034200675bc6061ed6fac1c
 
 build:
+  error_overlinking: true
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython >=0.29.33,<4                    # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
   host:
-    - cython >=0.29
+    - cython >=0.29.33,<4
     - numpy
+    - packaging >=21.0
     - pip
     - python
     - setuptools
     - setuptools-scm
-    - packaging
   run:
     - {{ pin_compatible('numpy') }}
     - python
