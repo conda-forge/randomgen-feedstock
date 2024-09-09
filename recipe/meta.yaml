@@ -10,7 +10,7 @@ source:
   sha256: 1029fe65120631efbb42f9a78ee1a0fe6c17719ca034200675bc6061ed6fac1c
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -20,6 +20,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - cython >=0.29
     - numpy
