@@ -10,7 +10,8 @@ source:
   sha256: dbdabc1e62502d9c83ef62589f0e12828e726ae9a8a6f07475cabcac9d42f0af
 
 build:
-  number: 0
+  error_overlinking: true
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   error_overlinking: true
   skip: true  # [py<39]
