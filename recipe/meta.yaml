@@ -18,23 +18,24 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython >=0.29.33,<4                    # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    
   host:
+    - python
+    - pip
+    - setuptools
     - cython >=3.0.10,<4
     - numpy
-    - packaging >=21.0
-    - pip
-    - python
-    - setuptools
     - setuptools-scm
   run:
-    - {{ pin_compatible('numpy') }}
     - python
+    - numpy <3,>=1.22.3
+    
 
 test:
   requires:
