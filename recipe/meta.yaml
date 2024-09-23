@@ -23,7 +23,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
   host:
-    - cython >=3.0.10<4
+    - cython >=3.0.10,<4
     - numpy
     - packaging >=21.0
     - pip
