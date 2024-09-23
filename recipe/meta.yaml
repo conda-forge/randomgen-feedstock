@@ -13,6 +13,8 @@ build:
   error_overlinking: true
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<39]
+  skip: true  # [python_impl == "pypy"]  
 
 requirements:
   build:
