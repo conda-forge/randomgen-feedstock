@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "1.26.1" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1029fe65120631efbb42f9a78ee1a0fe6c17719ca034200675bc6061ed6fac1c
+  sha256: dbdabc1e62502d9c83ef62589f0e12828e726ae9a8a6f07475cabcac9d42f0af
 
 build:
   number: 1
@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - cython >=0.29
+    - cython >=3.0.10
     - numpy
     - pip
     - python
