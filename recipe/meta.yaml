@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2627a2b14403ab0842c9198e83b6971dfd002a15b1af7507085cfc46f3415e1d
+  sha256: 2f402afff92d2025e0a054bd5aa3069bed476951f18a5476c715cb695f3c418b
 
 build:
   error_overlinking: true
