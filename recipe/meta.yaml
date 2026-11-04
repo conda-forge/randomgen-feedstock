@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "2.3.0" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0de65d79e1346ac406b51df49a79b9e3d8b41a8a1a8e5de088c2fb49b8c89cc
+  sha256: f8937d8c42532f2a525616bb85638dea3d0b90eb11cb612de8655dcee4a42373
 
 build:
   error_overlinking: true
-  number: 3
+  number: 0
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     # Cross-compilation stuff vendored from numpy-feedstock
