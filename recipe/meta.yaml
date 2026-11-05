@@ -1,5 +1,5 @@
 {% set name = "randomgen" %}
-{% set version = "2.5.0" %}
+{% set version = "2.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f8937d8c42532f2a525616bb85638dea3d0b90eb11cb612de8655dcee4a42373
+  sha256: de8d3b122e9e0a451a9a0fcb6aa5b428866a56579be6308e4ba2fee72a117bfe
 
 build:
   error_overlinking: true
